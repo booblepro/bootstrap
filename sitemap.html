@@ -1,0 +1,74 @@
+---
+layout: default
+title: Sitemap
+description: A guide to exploring Bootstrap Starter themes and templates.
+---
+
+<div class="mx-auto text-center pt-5 pb-4">        
+    <h1 class="display-4">Sitemap</h1>
+    <p class="lead">Bootstrap Starter currently has {{ site.posts | size }} free themes, {{ site.categories | size }} categories, {{ site.tags | size }} tags and {{ site.pages | size }} pages.</p>  
+</div>
+
+<div class="row">
+    
+    <div class="col-md-3">
+        <div class="widget">
+        <h5 class="mb-3">Categories ({{ site.categories | size }})</h5>
+        <ul>
+        {% assign categories_list = site.categories %}
+          {% if categories_list.first[0] == null %}
+            {% for category in categories_list %}
+            <li><a href="/template-categories/{{ category }}">{{ category | capitalize }} ({{ site.tags[category].size }})</a></li>
+            {% endfor %}
+          {% else %}
+            {% for category in categories_list %}
+              <li><a href="/template-categories/{{ category[0] | downcase }}">{{ category[0] | capitalize }} ({{ category[1].size }})</a></li>
+            {% endfor %}
+          {% endif %}
+        {% assign categories_list = nil %}
+        </ul>
+        </div>
+        
+        <div class="widget">
+          <h5 class="mb-3">Tags ({{ site.tags | size }})</h5>
+        <ul>
+        {% assign tags_list = site.tags %}
+          {% if tags_list.first[0] == null %}
+            {% for tag in tags_list %}
+            <li><a href="/template-tags/{{ tag }}">{{ tag | capitalize }} ({{ site.tags[tag].size }})</a></li>
+            {% endfor %}
+          {% else %}
+            {% for tag in tags_list %}
+              <li><a href="/template-tags/{{ tag[0] | downcase }}">{{ tag[0] | capitalize }} ({{ tag[1].size }})</a></li>
+            {% endfor %}
+          {% endif %}
+        {% assign tags_list = nil %}
+        </ul>
+        </div>
+    </div>
+    
+  <div class="col-md-5">
+    <div class="widget">
+    <h5 class="mb-3">Themes ({{ site.posts | size }})</h5>
+    <ul>
+    {% for post in site.posts %}
+    <li><a href="{{post.url}}">{{post.theme}}-{{post.subtitle}}</a></li>
+    {% endfor %}
+    </ul>
+    </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="widget">
+            <h5 class="mb-3">Pages ({{ site.pages | size }})</h5>
+            <ul>
+                {% for page in site.pages %}
+                <li><a href="{{page.url}}">{{page.title}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    
+      
+    
+</div>

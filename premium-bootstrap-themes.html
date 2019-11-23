@@ -1,0 +1,32 @@
+---
+title: Subscribe Newsletter
+layout: default
+permalink: /premium-bootstrap-themes/
+---
+<div class="mx-auto text-center pt-5 pb-4">
+    <h1 class="display-4">Premium Bootstrap Themes</h1>
+    <p class="lead">Premium Bootstrap themes from <em>other vendors</em>.<p>
+    
+    <p class="font-weight-light"> Note: These are not my <a href="{{base.url}}/bootstrap-templates/">free items</a>, so the freebies license does not apply here.<br/>I may make a small commission if you click through and make a purchase. Your price will not be affected.</p>
+</div>
+
+<div class="row premium" id="premiumwrapb">
+</div>
+<script>
+var feedURL = "http://feeds.feedburner.com/wrapbootstrap";
+$.ajax({
+type: 'GET',
+url: "https://api.rss2json.com/v1/api.json?rss_url=" + feedURL,
+dataType: 'json',
+success: function(data) {
+console.log(data);
+$.each(data.items, function(i, f) {    
+    hrefurl=f.link;
+    last_part=hrefurl.substr(hrefurl.lastIndexOf('/') + 1)    
+$("#premiumwrapb")
+ .append("<div class='col-md-3'><div class='themecard'><a target='_blank' href='https://wrapbootstrap.com/theme/" + last_part +"/?ref=wowthemesnet'><img src='" + f.thumbnail +"'><h6 class='mb-4 pt-4 pl-4 pr-4 pb-4'>" + f.title + "</h6></a></div></div>")
+});
+}
+});
+</script>
+

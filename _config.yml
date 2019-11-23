@@ -1,0 +1,52 @@
+url: "https://bootstrapstarter.com"
+baseurl:
+name: Bootstrap Starter
+title: Bootstrap Starter
+description: Free Bootstrap Templates for your next project. Open source, free for personal and commercial use.
+license: MIT
+
+social:
+  name: Bootstrap Starter
+  links:
+    - https://twitter.com/bootstrapstartr
+    - https://www.facebook.com/bootstrapstarter/
+    - https://plus.google.com/u/0/115693939297534707177
+    - https://github.com/wowthemesnet
+    
+locale: en_us
+
+lang: en_us
+
+author: Sal
+
+logo: /assets/img/logo.png
+
+# To use Facebook Comments, fill in a Facebook App ID
+fb_comment_id: "592355564574617"
+
+author:
+  facebook: bootstrapstarter
+  twitter: bootstrapstartr
+  
+facebook:
+  app_id: 784783748398659
+  publisher: https://www.facebook.com/bootstrapstarter/
+  admins: https://www.facebook.com/sal.cos8
+  
+twitter:
+  username: bootstrapstartr
+  
+webmaster_verifications:
+  google: 6Is1whz1UZbjrp5vrSn-iQnYtE6AnDc4UTDd2KRJlPs
+  
+permalink: /bootstrap-templates/:title/
+
+plugins: 
+    - jekyll-paginate
+    - jekyll-sitemap
+    - jekyll-seo-tag
+    - jekyll-last-modified-at
+
+paginate: 18
+highlighter: rouge
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile', 'vendor']

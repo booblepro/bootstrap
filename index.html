@@ -1,0 +1,41 @@
+---
+layout: default
+title: Free Bootstrap Themes and Templates
+description: Download a free, open source theme to kickstart your Bootstrap website. Free Bootstrap templates for your personal, commercial and client projects.
+image: /assets/img/sal.jpg
+---
+
+<div class="mx-auto text-center pt-5">       
+    <h1 class="display-4">Bootstrap Starter</h1>
+    <p class="lead">Download  {{ site.posts | size }} free, open source <b>themes</b> to kickstart your Bootstrap website</p>
+    <a href="{{ base.url}}/bootstrap-templates/"><img src="{{base.url}}/assets/img/sal.jpg"></a>
+</div>
+
+<div class="mx-auto text-center">
+<h1 class="display-6">Latest Themes</h1>
+</div>
+
+<div class="row mt-5 cardrecent">     
+    
+    {% for post in site.posts limit:6 %}  
+        <div class="col-md-4">            
+            {% include themecard.html %}            
+        </div>    
+    {% endfor %}
+    
+</div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Gutenber under title -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3412143450191416"
+     data-ad-slot="1877303008"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div class="row mt-3 justify-content-center">
+    <a class="btn btn-primary" href="{{ base.url}}/bootstrap-templates">&rarr; View All Themes</a>
+</div>
